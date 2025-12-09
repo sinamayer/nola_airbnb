@@ -79,7 +79,7 @@ Or view it as a **separate web page**: [nola_Airbnbs.html](nola_Airbnbs.html)
 - **Processing:** Filtered for high-risk flood zones (V/VE) and 100-year zones (A/AE/AO/AH); simplified geometries for webmap.
 
 #### Transit Routes & Stops
-- **Source:** [City of New Orleans Open Data](https://catalog.data.gov/dataset/truck-routes-fcf7e] & [https://data.nola.gov/Transportation-and-Infrastructure/RTA-Stops/hp2r-gr3h/about_data) 
+- **Source:** [US Open Data](https://catalog.data.gov/dataset/truck-routes-fcf7e) & [City of New Orleans Open Data](https://data.nola.gov/Transportation-and-Infrastructure/RTA-Stops/hp2r-gr3h/about_data)
 - **Original format:** CSV for stops, shapefiles/GeoJSON for routes  
 - **Processing:** Converted coordinates to shapely geometry; converted stops to points, created quarter-mile buffers, simplified geometries for web display.  
 
