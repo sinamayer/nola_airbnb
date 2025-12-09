@@ -52,13 +52,13 @@ Or view it as a **separate web page**: [nola_Airbnbs.html](nola_Airbnbs.html)
 ### Datasets Used
 
 #### Airbnb Data
-- **Source:** Inside Airbnb  [https://insideairbnb.com/get-the-data/] 
+- **Source:** [Inside Airbnb](https://insideairbnb.com/get-the-data/)
 - **Last updated:** 09/11/2025  
 - **Original format:** CSV, with latitude/longitude coordinates  
 - **Processing:** Spatial join with tract geometries; aggregated listings to census tracts to obtain Airbnb count per tract; calculated affordability ratio (median nightly price / median daily income).
 
 #### Tract Geometries
-- **Source:** NHGIS  [https://www.nhgis.org/]
+- **Source:** [NHGIS](https://www.nhgis.org/)
 - **Original format:** Shapefiles within ZIP archive
 - **Processing:** Filtered to Orleans Parish.
 
@@ -68,18 +68,18 @@ Or view it as a **separate web page**: [nola_Airbnbs.html](nola_Airbnbs.html)
 - **Processing:** Joined median household income data to census tract geometries & Airbnb data; calculated median daily hosuehold income data for affordability ratios; handled missing estimates; calculate CVs for income to show low-confidence estimates (CV > 40) with hatching in static maps.  
 
 #### Rental Housing Unit Gap
-- **Source:** Moody’s Analytics, Reinvestment Fund, PolicyMap  [https://www.policymap.com/data/moodys-housing-shortfall], based on ACS 2023 5-year estimates
+- **Source:** [Moody’s Analytics, Reinvestment Fund, PolicyMap](https://www.policymap.com/data/moodys-housing-shortfall), based on ACS 2023 5-year estimates
 - **Original format:** CSV with tract identifiers 
 - **Processing:** Joined table to tract geometries. 
 
 #### Flood Zones (SFHA)
-- **Source:** FEMA National Flood Hazard Layer (NFHL)  [https://msc.fema.gov/portal/home ]
+- **Source:** [FEMA National Flood Hazard Layer (NFHL)](https://msc.fema.gov/portal/home)
 - **Last updated:** 09/30/2016
 - **Original format:** Shapefiles within ZIP archives  
 - **Processing:** Filtered for high-risk flood zones (V/VE) and 100-year zones (A/AE/AO/AH); simplified geometries for webmap.
 
 #### Transit Routes & Stops
-- **Source:** City of New Orleans Open Data [https://catalog.data.gov/dataset/truck-routes-fcf7e] & [https://data.nola.gov/Transportation-and-Infrastructure/RTA-Stops/hp2r-gr3h/about_data]  
+- **Source:** [City of New Orleans Open Data](https://catalog.data.gov/dataset/truck-routes-fcf7e] & [https://data.nola.gov/Transportation-and-Infrastructure/RTA-Stops/hp2r-gr3h/about_data) 
 - **Original format:** CSV for stops, shapefiles/GeoJSON for routes  
 - **Processing:** Converted coordinates to shapely geometry; converted stops to points, created quarter-mile buffers, simplified geometries for web display.  
 
