@@ -9,7 +9,7 @@
 ## 1. Overview
 This project visualizes Airbnb affordability, rental housing gaps, and flood risk in New Orleans. It includes:  
 
-- **Static Map 1:** Airbnb Affordability Ratio per census tract  
+- **Static Map 1:** Airbnb Affordability Ratio per census tract & Airbnb Density 
 - **Static Map 2:** Rental Housing Unit Gap & Flood Zones  
 - **Interactive Webmap:** Combines Airbnb listings, affordability choropleth, flood zones, and transit buffers  
 
@@ -17,8 +17,8 @@ This project visualizes Airbnb affordability, rental housing gaps, and flood ris
 
 ## 2. Static Maps
 
-### Static Map 1: Airbnb Affordability Ratio
-Shows the **median nightly Airbnb price relative to median daily income**.
+### Static Map 1: Airbnb Affordability Ratio & Airbnb Density
+Shows the **median nightly Airbnb price relative to median daily income** overlayed by **circles proportional to Airbnb density**.
 
 ![Airbnb Affordability Ratio](airbnb_affordability_map.png) 
 
@@ -39,7 +39,7 @@ This interactive map includes:
 - **Airbnb Heat Map**  
 - **Flood Zones (SFHA)**  
 - **Quarter-mile Transit Buffers**  
-- **Transit Routes & Stops**  
+- **RTA Transit Routes & Stops**  
 
 <iframe src="nola_Airbnbs.html" height="855" width="95%"></iframe>  
 
@@ -55,21 +55,21 @@ Or view it as a **separate web page**: [nola_Airbnbs.html](nola_Airbnbs.html)
 - **Source:** Inside Airbnb  [https://insideairbnb.com/get-the-data/] 
 - **Last updated:** 09/11/2025  
 - **Original format:** CSV, with latitude/longitude coordinates  
-- **Processing:** Converted coordinates to shapely geometry; aggregated listings to census tracts; calculated affordability ratio (median nightly price / median daily income).
+- **Processing:** Spatial join with tract geometries; aggregated listings to census tracts to obtain Airbnb count per tract; calculated affordability ratio (median nightly price / median daily income).
 
 #### Tract Geometries
 - **Source:** NHGIS  [https://www.nhgis.org/]
 - **Original format:** Shapefiles within ZIP archive
-- **Processing:** Filtered to Orleans Parish
+- **Processing:** Filtered to Orleans Parish.
 
-#### Census Data (Income & Housing)
+#### Census Data (Median Household Income (yearly))
 - **Source:** American Community Survey (ACS) 2023 5-year estimates API 
-- **Original format:** CSV and shapefiles  
-- **Processing:** Joined tabular income data to census tract geometries; calculated affordability ratios; handled missing or low-confidence estimates with hatching in static maps.  
+- **Original format:** CSV 
+- **Processing:** Joined median household income data to census tract geometries & Airbnb data; calculated median daily hosuehold income data for affordability ratios; handled missing estimates; calculate CVs for income to show low-confidence estimates (CV > 40) with hatching in static maps.  
 
 #### Rental Housing Unit Gap
-- **Source:** Moody’s Analytics, Reinvestment Fund, PolicyMap  [https://www.policymap.com/data/moodys-housing-shortfall]
-- **Original format:** CSV with tract identifiers  
+- **Source:** Moody’s Analytics, Reinvestment Fund, PolicyMap  [https://www.policymap.com/data/moodys-housing-shortfall], based on ACS 2023 5-year estimates
+- **Original format:** CSV with tract identifiers 
 - **Processing:** Joined table to tract geometries. 
 
 #### Flood Zones (SFHA)
@@ -81,7 +81,7 @@ Or view it as a **separate web page**: [nola_Airbnbs.html](nola_Airbnbs.html)
 #### Transit Routes & Stops
 - **Source:** City of New Orleans Open Data [https://catalog.data.gov/dataset/truck-routes-fcf7e] & [https://data.nola.gov/Transportation-and-Infrastructure/RTA-Stops/hp2r-gr3h/about_data]  
 - **Original format:** CSV for stops, shapefiles/GeoJSON for routes  
-- **Processing:** Converted stops to points, created quarter-mile buffers, simplified geometries for web display.  
+- **Processing:** Converted coordinates to shapely geometry; converted stops to points, created quarter-mile buffers, simplified geometries for web display.  
 
 ### Data Quality Issues
 - Missing or low-confidence data in income or rental gap datasets (handled with hatching or “No estimate” coloring).  
