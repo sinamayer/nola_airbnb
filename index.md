@@ -20,14 +20,14 @@ This project visualizes Airbnb affordability, rental housing gaps, and flood ris
 ### Static Map 1: Airbnb Affordability Ratio & Airbnb Density
 Shows the **median nightly Airbnb price relative to median daily income** overlayed by **circles proportional to Airbnb density**.
 
-![Airbnb Affordability Ratio](airbnb_affordability_map.png) 
+<img src="airbnb_affordability_map.png" alt="Airbnb Affordability Ratio" width="95%">
 
 ---
 
 ### Static Map 2: Rental Housing Unit Gap & Flood Zones
 Overlays the **rental housing unit gap** with **FEMA Special Flood Hazard Areas (SFHA)**.
 
-![Airbnb Rental Housing Gap & Flood Zones](airbnb_housinggap_map.png) 
+<img src="airbnb_housinggap_map.png" alt="Airbnb Rental Housing Gap" width="95%">
 
 ---
 
