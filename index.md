@@ -1,5 +1,5 @@
 # Command-Line GIS Final Project  
-## Airbnbs in New Orleans  
+## Airbnbs & Gentrification in New Orleans  
 
 **Author:** Sina-Marie Mayer
 **Course:** Command-Line GIS  
