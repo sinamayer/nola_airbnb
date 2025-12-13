@@ -19,6 +19,7 @@ This project visualizes Airbnb affordability, rental housing gaps, and flood ris
 
 ### Static Map 1: Airbnb Affordability Ratio & Airbnb Density
 Shows the **median nightly Airbnb price relative to median daily income**, overlayed with **circles proportional to Airbnb density**.
+*Note: CVs are based on income only.*
 
 <img src="airbnb_affordability_map.png" alt="Airbnb Affordability Ratio" width="95%">
 
